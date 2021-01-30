@@ -1,11 +1,10 @@
 //import React from 'react';
 
-const initialState = {
-    lists :[
+const initialState = [
         {
             id:0,
             title:'Welcome',
-            card :[
+            cards:[
                 {
                     id:0,
                     text:'Work with Trello With Ease'
@@ -15,10 +14,26 @@ const initialState = {
                     text:'Try Creating Lists'
                 }
             ]
+        },
+        {
+            id:1,
+            title:'Trello is Fun',
+            cards:[
+                {
+                    id:0,
+                    text:'Start working with multiple tasks'
+                },
+                {
+                    id:1,
+                    text:'maintain your workforce'
+                },
+                {
+                    id:2,
+                    text:'never leave your work behind'
+                }
+            ]
         }
-    ]
-
-}
+    ];
 
 export default function appReducer(state=initialState,action){
     switch(action.type){

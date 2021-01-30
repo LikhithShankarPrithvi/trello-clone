@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { Container } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import TrelloList from './components/trelloList';
 import { connect } from 'react-redux';
 
@@ -7,15 +7,17 @@ import { connect } from 'react-redux';
 class App extends Component{
   render()
   {
-    const { lists } = this.props;
+    const {lists} = this.props;
     console.log(lists);
     return (
-      <div className="App">
-        <h1>oihvg</h1>
-        { lists.map(list =>(
-          <TrelloList title={list.title} cards={list.cards}/>
+      <div className="App p-1">
+        <h1>Trello Clone</h1>
+        <Row className='pl-2'>
+        { lists.map(list =>( <div className='m-2'>
+          <TrelloList key={list.id} title={list.title} cards={list.cards}/>
+          </div>
         ))}
-      <TrelloList title='likhith'/>
+        </Row>
       </div>
     )
   }
